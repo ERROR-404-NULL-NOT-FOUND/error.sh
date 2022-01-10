@@ -3,7 +3,6 @@ body{
     color: #A9D6E5;
     font-weight: 500;
     background-color: #012A4A;
-    width:100%;
 }
 h2 {
     font-weight: 500;
@@ -18,19 +17,20 @@ a {
 }
 .nav-skip {
     position:absolute;
-    top: -120%;
+    top: -10px;
+    left:0;
     background-color: #01497C;
 }
 .nav-skip:focus{
-    top:0%;
-    z-index: 10000;
+    top:0;
+    z-index: 2;
 }
 .Navigation {
-    background-color: #013A63;
     position:absolute;
+    background-color: #013A63;
     top:0;
-    left:0;
     right:0;
+    margin:none;
     height:100%;
     width:100%;
     font-size: larger;
@@ -40,28 +40,27 @@ a {
     font-weight: 500;
     position:absolute;
     top:45%;
-    left:20%
+    left:20%;
+    margin:none;
 }
 .Navigation > .name {
     color: #A9D6E5;
     position:absolute;
     left:20%;
     top:54%;
+    margin:none;
 }
 .Navigation > .github {
     position: absolute;
     top:50%;
     right: 5%;
     font-weight: 500;
-}
-footer {
-    margin-top:5%;
+    margin:none;
 }
 header {
     position:absolute;
     top:0;
     left:0;
-    right:0;
     background-color: #013A63;
     width:100%;
     margin:none;
@@ -162,7 +161,7 @@ main{
     border:0px;
     margin:0px;
     padding:0px;
-    width:100%;
+    width:99%;
     background-color:#012A4A;
 }
 .main {
