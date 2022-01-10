@@ -3,8 +3,12 @@ body{
     color: #A9D6E5;
     font-weight: 500;
     background-color: #012A4A;
+    width:100%;
 }
 h2 {
+    font-weight: 500;
+}
+h3 {
     font-weight: 500;
 }
 a {
@@ -24,14 +28,12 @@ a {
 .Navigation {
     background-color: #013A63;
     position:absolute;
-    width:100%;
-    top:0px;
-    left:0px;
-    right:-1px;
+    top:0;
+    left:0;
+    right:0;
     height:100%;
-    width:102%;
+    width:100%;
     font-size: larger;
-    vertical-align: middle
 }
 .Navigation > .hello {
     color: #2C7DA0;
@@ -77,6 +79,7 @@ header > .info{
     position: absolute;
     top: 120%;
     text-align: center; 
+    padding-bottom:20px;
 }
 .post{
     margin-top: 2%;
@@ -92,6 +95,19 @@ header > .info{
     position: absolute;
     top:0;
     left:1%
+}
+.basedcontainer{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.profile {
+    flex-grow:0;
+    background-color: #014F86;
+    border-radius: 15px;
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
 }
 .based{
     display: flex;
@@ -112,15 +128,20 @@ header > .info{
     margin-top: 15px;
 }
 .about-author{
-    margin-left: 35%;
+    margin-left: 30%;
     padding: 10px;
     margin-top: 5%;
     border-radius: 15px;
-    background-color: #013A63;
-    width:27%;
+    background-color: #014F86;
+    width:40%;
+    margin-bottom: 10px;
+    padding-top: 5px
 }
 .about-author > h4 {
+    margin-left:10px;
     font-weight: 500;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 .author {
     display:flex;
@@ -141,10 +162,12 @@ main{
     border:0px;
     margin:0px;
     padding:0px;
-    width:98%;
+    width:100%;
     background-color:#012A4A;
 }
 .main {
     position:absolute;
-    top: 40%
+    top: 40%;
+    width:70%;
+    right:15%;
 }
