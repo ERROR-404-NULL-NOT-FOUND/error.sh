@@ -1,0 +1,150 @@
+body{
+    font-family: 'Inter', sans-serif;
+    color: #A9D6E5;
+    font-weight: 500;
+    background-color: #012A4A;
+}
+h2 {
+    font-weight: 500;
+}
+a {
+    color: #61A5C2;
+    text-decoration: none;
+    font-weight: 500;
+}
+.nav-skip {
+    position:absolute;
+    top: -120%;
+    background-color: #01497C;
+}
+.nav-skip:focus{
+    top:0%;
+    z-index: 10000;
+}
+.Navigation {
+    background-color: #013A63;
+    position:absolute;
+    width:100%;
+    top:0px;
+    left:0px;
+    right:-1px;
+    height:100%;
+    width:102%;
+    font-size: larger;
+    vertical-align: middle
+}
+.Navigation > .hello {
+    color: #2C7DA0;
+    font-weight: 500;
+    position:absolute;
+    top:45%;
+    left:20%
+}
+.Navigation > .name {
+    color: #A9D6E5;
+    position:absolute;
+    left:20%;
+    top:54%;
+}
+.Navigation > .github {
+    position: absolute;
+    top:50%;
+    right: 5%;
+    font-weight: 500;
+}
+footer {
+    margin-top:5%;
+}
+header {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    background-color: #013A63;
+    width:100%;
+    margin:none;
+    text-align: center;
+    padding-top:5%;
+    padding-bottom:5%;
+}
+header > .title{
+    font-weight: 500;
+}
+header > .info{
+    font-weight: 500;
+}
+.mainpage {
+    position: absolute;
+    top: 120%;
+    text-align: center; 
+}
+.post{
+    margin-top: 2%;
+    margin-left:25%;
+    font-size:large;
+    background-color: #014F86;
+    border-radius: 15px;
+    width:50%;
+    text-align: left;
+    padding: 15px;
+}
+.webname {
+    position: absolute;
+    top:0;
+    left:1%
+}
+.based{
+    display: flex;
+}
+.basedNames {
+    margin-top:35px;
+    display:inline-flex;
+    justify-content: flex-end;
+    align-self: center;
+}
+.profile-pic {
+    display:inline-flex;
+    align-self: center;
+    max-width:50px;
+    max-height:50px;
+    margin-right:10px;
+    border-radius: 30px;
+    margin-top: 15px;
+}
+.about-author{
+    margin-left: 35%;
+    padding: 10px;
+    margin-top: 5%;
+    border-radius: 15px;
+    background-color: #013A63;
+    width:27%;
+}
+.about-author > h4 {
+    font-weight: 500;
+}
+.author {
+    display:flex;
+}
+.author > img{
+    display:inline-flex;
+    align-self: center;
+    max-width:50px;
+    max-height:50px;
+}
+.author > h3{
+    font-weight: 500;
+    display:inline-flex;
+    align-self: center;
+    margin-top:20px;
+}
+main{
+    border:0px;
+    margin:0px;
+    padding:0px;
+    width:98%;
+    background-color:#012A4A;
+}
+.main {
+    position:absolute;
+    top: 40%
+}
