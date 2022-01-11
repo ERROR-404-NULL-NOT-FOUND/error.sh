@@ -170,3 +170,15 @@ main{
     width:70%;
     right:15%;
 }
+.error-404{
+    position:absolute;
+    right:10%;
+    font-size: 300px;
+    font-weight: 500;
+}
+.errormessage{
+    position:absolute;
+    top:45%;
+    left:10%;
+    font-weight: 500;
+}
