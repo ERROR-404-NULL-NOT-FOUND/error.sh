@@ -3,6 +3,7 @@ body{
     color: #A9D6E5;
     font-weight: 500;
     background-color: #012A4A;
+    margin:0;
 }
 h2 {
     font-weight: 500;
@@ -39,7 +40,7 @@ a {
     color: #2C7DA0;
     font-weight: 500;
     position:absolute;
-    top:45%;
+    top:42%;
     left:20%;
     margin:none;
 }
@@ -47,12 +48,12 @@ a {
     color: #A9D6E5;
     position:absolute;
     left:20%;
-    top:54%;
+    top:51%;
     margin:none;
 }
 .Navigation > .github {
     position: absolute;
-    top:50%;
+    top:47%;
     right: 5%;
     font-weight: 500;
     margin:none;
@@ -163,6 +164,7 @@ main{
     padding:0px;
     width:99%;
     background-color:#012A4A;
+    padding-bottom: 50px;
 }
 .main {
     position:absolute;
@@ -181,4 +183,13 @@ main{
     top:45%;
     left:10%;
     font-weight: 500;
+}
+
+.post-link{
+    border-top:30px;
+}
+footer{
+    position: absolute;
+    bottom: 1%;
+    text-align: center;
 }
