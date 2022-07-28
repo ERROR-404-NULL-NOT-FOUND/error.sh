@@ -5,16 +5,12 @@ body{
     background-color: #012A4A;
     margin:0;
 }
-h2 {
-    font-weight: 500;
-}
-h3 {
+h2, h3, a {
     font-weight: 500;
 }
 a {
     color: #61A5C2;
     text-decoration: none;
-    font-weight: 500;
 }
 .nav-skip {
     position:absolute;
@@ -76,6 +72,9 @@ header > .info{
     font-weight: 500;
 }
 .mainpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
     top: 120%;
     text-align: center; 
@@ -83,7 +82,6 @@ header > .info{
 }
 .post{
     margin-top: 2%;
-    margin-left:25%;
     font-size:large;
     background-color: #014F86;
     border-radius: 15px;
@@ -98,6 +96,7 @@ header > .info{
 }
 .basedcontainer{
     display:flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
@@ -108,6 +107,7 @@ header > .info{
     padding: 10px;
     padding-bottom: 0px;
     padding-top: 0px;
+    margin : 10px
 }
 .based{
     display: flex;
@@ -128,7 +128,6 @@ header > .info{
     margin-top: 15px;
 }
 .about-author{
-    margin-left: 30%;
     padding: 10px;
     margin-top: 5%;
     border-radius: 15px;
@@ -159,19 +158,24 @@ header > .info{
     margin-top:20px;
 }
 main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border:0px;
     margin:0px;
     padding:0px;
-    width:99%;
+    width:100%;
     background-color:#012A4A;
     padding-bottom: 50px;
 }
 .main {
     position:absolute;
     top: 41%;
-    width:70%;
-    right:15%;
+    width:100%;
 }
+.main p{width:70%;}
+.main ul{width: 70%;}
+
 .error-404{
     position:absolute;
     right:10%;
