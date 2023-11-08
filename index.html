@@ -1,54 +1,66 @@
 <!DOCTYPE html>
 <html>
-    <!--Import inter font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;900&display=swap" rel="stylesheet">
-    <!--Website metadata-->
-    <head>
-        <!--Import stylesheet-->
-        <link rel="stylesheet" href="static/css/index.css">
+  <!--Website metadata-->
+  <head>
+    <!--Import stylesheet-->
+    <link rel="stylesheet" href="static/css/index.css" />
 
-        <title>ERROR 404: NULL NOT FOUND</title>
-        <link rel="icon" type="image/png" href="static/images/Favicon.png">
-        <meta property="og:title" content="ERROR's Website" />
-        <meta property="og:description" content="Error's blog website thingy" />
-    </head>
-    <!--Main-->
-    <body>
-        <!--Accessability, only shows up if using tab-->
-        <a class='nav-skip' href="#main-content">skip navigation</a>
-        <!--What shows up first-->
-        <div class="Navigation">
-            <h1 class="hello">Hi.</h1>
-            <div class="name">
-                <h1>I'm ERROR</h1>
-                <p>Programmer, Furry, Linux user, FOSS believer</p>
-            </div>
-            <h3 class='github'><a href="https://github.com/ERROR-404-NULL-NOT-FOUND">github.com/<br>ERROR-404-NULL-NOT-FOUND >></a></h3>
-        </div>
+    <title>ERROR 404: NULL NOT FOUND</title>
+    <link rel="icon" type="image/png" href="static/images/Favicon.png" />
+    <meta property="og:title" content="ERROR's Website" />
+    <meta property="og:description" content="Error's blog website thingy" />
+  </head>
+  <!--Main-->
+  <body>
+    <!--What shows up first-->
+    <div class="Navigation">
+      <h3 class="terminal-input">$ whoami</h3>
+      <h1 class="hello">Hi.</h1>
+      <div class="name">
+        <h3>I'm ERROR</h3>
+        <p>Programmer, transfemme, Linux user, FOSS believer</p>
+      </div>
+      <h3>Links</h3>
+      <a href="https://github.com/ERROR-404-NULL-NOT-FOUND"
+        >github.com/ERROR-404-NULL-NOT-FOUND</a
+      >
+      <br /><a href="https://git.gay/ERROR-404-NULL-NOT-FOUND"
+        >git.gay/ERROR-404-NULL-NOT-FOUND</a
+      >
+      <p></p>
+    </div>
 
-        <!--Listing posts-->
-        <main class="mainpage" id="main-content">
-            <h2>Recent Posts</h2>
-            
-            <div class="post">
-                <h3><a href="posts/why-linux-is-good.html">Why you should try Linux</a></h3>
-                <p>Why you should at least try using Linux over Windows or Macos</p>
-            </div>
+    <!--Listing posts-->
+    <h3 class="terminal-input">$ ls posts | tail -3</h3>
+    <main class="mainpage" id="main-content">
+      <div class="post">
+        <h3>
+          <a href="posts/why-linux-is-good.html">Why you should try Linux</a>
+        </h3>
+        <p>Why you should at least try using Linux over Windows or Macos</p>
+      </div>
 
-            <div class="post">
-                <h3><a href="posts/based-people.html">Based People</a></h3>
-                <p>A list of people who I think are cool(based)</p>
-            </div>
+      <div class="post">
+        <h3><a href="posts/based-people.html">Based People</a></h3>
+        <p>A list of people who I think are cool (based)</p>
+      </div>
 
-            <div class="post">
-                <h3><a href="posts/about-me.html">About Me</a></h3>
-                <p>Some info about me</p>
-            </div>
+      <div class="post">
+        <h3><a href="posts/about-me.html">About Me</a></h3>
+        <p>Some info about me</p>
+      </div>
 
-            <a href="posts.html" class="post-link">More posts >></a>
-            <iframe src="https://ring.miruku.cafe/embed?bg=%23012a4a&amp;fg=%23a9d6e5&amp;button=%23014f86" style="margin-top: 12px;" width="200" height="30" frameborder="0"></iframe>
-        </main>
-    </body>
+      <p>
+        This list was truncated; for a full list, look in
+        <a href="posts.html" class="post-link">More posts</a>
+      </p>
+    </main>
+    <h3 class="terminal-input">$ grep "licensing"</h3>
+    <footer>
+      Made by ERROR-404-NULL-NOT-FOUND or <strong>Tetra Green</strong> as a
+      personal project. This website is licensed under
+      <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL 3.0 or later</a
+      >.
+    </footer>
+  </body>
 </html>

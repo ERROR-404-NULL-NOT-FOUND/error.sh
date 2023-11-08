@@ -1,199 +1,85 @@
-body{
-    font-family: 'Inter', sans-serif;
-    color: #A9D6E5;
-    font-weight: 500;
-    background-color: #012A4A;
-    margin:0;
+:root {
+  background-color: black;
+  color: white;
+  font-family: monospace;
 }
-h2, h3, a {
-    font-weight: 500;
-}
-a {
-    color: #61A5C2;
-    text-decoration: none;
-}
-.nav-skip {
-    position:absolute;
-    top: -10px;
-    left:0;
-    background-color: #01497C;
-}
-.nav-skip:focus{
-    top:0;
-    z-index: 2;
+.terminal-input {
+  color: lime;
 }
 .Navigation {
-    position:absolute;
-    background-color: #013A63;
-    top:0;
-    right:0;
-    margin:none;
-    height:100%;
-    width:100%;
-    font-size: larger;
+  border-style: solid;
+  border-color: white;
+  padding: 1em;
 }
-.Navigation > .hello {
-    color: #2C7DA0;
-    font-weight: 500;
-    position:absolute;
-    top:42%;
-    left:20%;
-    margin:none;
+a:before {
+  content: "[";
 }
-.Navigation > .name {
-    color: #A9D6E5;
-    position:absolute;
-    left:20%;
-    top:51%;
-    margin:none;
+a:after {
+  content: "]";
 }
-.Navigation > .github {
-    position: absolute;
-    top:47%;
-    right: 5%;
-    font-weight: 500;
-    margin:none;
+a {
+  color: cyan;
+  text-decoration: none;
 }
-header {
-    position:absolute;
-    top:0;
-    left:0;
-    background-color: #013A63;
-    width:100%;
-    margin:none;
-    text-align: center;
-    padding-top:5%;
-    padding-bottom:5%;
-}
-header > .title{
-    font-weight: 500;
-}
-header > .info{
-    font-weight: 500;
-}
-.mainpage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 120%;
-    text-align: center; 
-    padding-bottom:20px;
-}
-.post{
-    margin-top: 2%;
-    font-size:large;
-    background-color: #014F86;
-    border-radius: 15px;
-    width:50%;
-    text-align: left;
-    padding: 15px;
-}
-.webname {
-    position: absolute;
-    top:0;
-    left:1%
-}
-.basedcontainer{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+a:visited::before {
+  content: "[|";
 }
 .profile {
-    flex-grow:0;
-    background-color: #014F86;
-    border-radius: 15px;
-    padding: 10px;
-    padding-bottom: 0px;
-    padding-top: 0px;
-    margin : 10px
+  width: 84em;
+  display: block;
+  position: relative;
+  border-style: solid;
+  border-color: white;
+  padding: 1em;
 }
-.based{
-    display: flex;
+/*profile > .nl::before {
+  content: "| ";
 }
-.basedNames {
-    margin-top:35px;
-    display:inline-flex;
-    justify-content: flex-end;
-    align-self: center;
+.profile > .nl:after {
+  content: " |"
 }
-.profile-pic {
-    display:inline-flex;
-    align-self: center;
-    max-width:50px;
-    max-height:50px;
-    margin-right:10px;
-    border-radius: 30px;
-    margin-top: 15px;
+.profile::before, .profile::after {
+  content: "+----------------------------------------------------------------------------------+"
+}*/
+h1 {
+  font-size: 1em;
+  color: red;
 }
-.about-author{
-    padding: 10px;
-    margin-top: 5%;
-    border-radius: 15px;
-    background-color: #014F86;
-    width:40%;
-    margin-bottom: 10px;
-    padding-top: 5px
+h1:before {
+  content: "# ";
 }
-.about-author > h4 {
-    margin-left:10px;
-    font-weight: 500;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+h2 {
+  font-size: 1em;
+  color: deepskyblue;
 }
-.author {
-    display:flex;
+h2:before {
+  content: "## ";
 }
-.author > img{
-    display:inline-flex;
-    align-self: center;
-    max-width:50px;
-    max-height:50px;
+h3 {
+  font-size: 1em;
+  color: magenta;
 }
-.author > h3{
-    font-weight: 500;
-    display:inline-flex;
-    align-self: center;
-    margin-top:20px;
+h3:not(.terminal-input)::before {
+  content: "### ";
 }
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border:0px;
-    margin:0px;
-    padding:0px;
-    width:100%;
-    background-color:#012A4A;
-    padding-bottom: 50px;
+strong {
+  color: coral;
 }
-.main {
-    position:absolute;
-    top: 41%;
-    width:100%;
+strong:before {
+  content: "<";
 }
-.main p{width:70%;}
-.main ul{width: 70%;}
-
-.error-404{
-    position:absolute;
-    right:10%;
-    font-size: 300px;
-    font-weight: 500;
+strong:after {
+  content: ">";
 }
-.errormessage{
-    position:absolute;
-    top:45%;
-    left:10%;
-    font-weight: 500;
+h3 > a {
+  color: magenta;
 }
-
-.post-link{
-    border-top:30px;
+ul {
+  list-style-type: none;
 }
-footer{
-    position: absolute;
-    bottom: 1%;
-    text-align: center;
+li > h3:before {
+  content: "- " !important;
+}
+li:not(:has(h3)):before {
+  content: "- ";
 }
