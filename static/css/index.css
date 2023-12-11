@@ -11,13 +11,13 @@
   border-color: white;
   padding: 1em;
 }
-a:before {
+a[href]:before {
   content: "[";
 }
-a:after {
+a[href]:after {
   content: "]";
 }
-a {
+a[href] {
   color: cyan;
   text-decoration: none;
 }
@@ -62,6 +62,16 @@ h3 {
 h3:not(.terminal-input)::before {
   content: "### ";
 }
+
+h4:before {
+  content: "#### "
+}
+
+h4 {
+  font-size: 1em;
+  color: pink;
+}
+
 strong {
   color: coral;
 }
@@ -82,4 +92,13 @@ li > h3:before {
 }
 li:not(:has(h3)):before {
   content: "- ";
+}
+
+.codeblock {
+  margin: 4px;
+  padding: 1px;
+  width: fit-content;
+  display: block;
+  font: monospace;
+  background-color: darkslategray;
 }

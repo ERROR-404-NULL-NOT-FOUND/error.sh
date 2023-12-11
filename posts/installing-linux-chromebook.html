@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <!--Website metadata-->
+
+  <head>
+    <!--Import stylesheet-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/index.css" />
+    <link rel="stylesheet" href="../static/css/linux-chromebook.css" />
+    <title>ERROR 404: NULL NOT FOUND</title>
+    <link rel="icon" type="image/png" href="../static/images/Favicon.png" />
+    <meta property="og:title" content="Installing Linux on a Chromebook" />
+    <meta
+      property="og:description"
+      content="A guide on how to install Linux on a Chromebook via Mr. Chromebox firmware"
+    />
+  </head>
+
+  <body>
+    <a href="/index.html">home</a>
+    <h3 class="terminal-input">$ cat ./posts/installing-linux-chromebook</h3>
+    <header>
+      <h1>Installing Linux on a Chromebook</h1>
+      <h3>
+        A guide on how to install Linux on a Chromebook via Mr. Chromebox
+        firmware
+      </h3>
+    </header>
+    <main>
+      <h2><a name="why">Why</a></h2>
+      <p>
+        There are many reasons why one may want to install Linux on a
+        Chromebook, here are some of the most common:
+      </p>
+      <ul>
+        <li>Google can't figure out how to optimize ChromeOS</li>
+        <li>ChromeOS is incredibly limiting</li>
+        <li>Google tracking</li>
+      </ul>
+      <p>I did it for all of the above reasons</p>
+      <h2><a name="firmware">Step 1: install Mr. Chromebox firmware</a></h2>
+      <p>
+        The method used in this guide will be flashing Mr. Chromebox firmware.
+        <br />This method has some downsides, such as certain device functions
+        not working correctly on some hardware, but I'm going with it because
+        the actual OS installation is much more convienent than
+        <a href="https://github.com/eupnea-project">Depthboot</a>. <br /><strong
+          >This guide assumes that you have already enabled Developer mode and
+          have some familarity with UNIX/Linux commands</strong
+        >
+      </p>
+      <h3><a name="check-reqs">Checking flashing requirements</a></h3>
+      <p>
+        The first step to flashing cfw is to determine whether or not your
+        device is supported and what you have to do to disable it.
+        <br />Consult
+        <a href="https://wiki.mrchromebox.tech/Supported_Devices"
+          >Mr. Chromebox's chart</a
+        >
+        to determine whether your device is supported. If your device is
+        supported, note the write protect method for use in the next section
+      </p>
+      <h3><a name="write-protect">Disabling hardware write-protect</a></h3>
+      <p>
+        If your device is supported, go to section for its write protect method
+        below
+      </p>
+      <h4><a name="screw">Screw</a></h4>
+      <p>Steps:</p>
+      <ol>
+        <li>Disassemble the machine</li>
+        <li>
+          Find the write-protect screw following the diagram below (credit:
+          memcpy.io) and remove it
+        </li>
+        <li>Re-assemble the machine</li>
+      </ol>
+      <img
+        src="static/images/2017-02-27_wp_screw.jpg"
+        alt="an image of a disassembled Chromebook with an arrow pointing to the write-protect screw on the left side of the battery"
+      />
+      <h4><a name="battery">CR50 (battery)</a></h4>
+      <p>
+        This method requires access to a power supply in order to run the device
+        without a battery. Steps:
+      </p>
+      <ol>
+        <li>Disassemble the machine</li>
+        <li>Find the battery connector and disconnect it</li>
+        <li>Flash the custom firmware</li>
+        <li>Re-assemble the machine</li>
+      </ol>
+      <h4><a  name="jumper">CR50 (jumper)</a></h4>
+      <p>
+        This method requires more research and skill, as you need to figure out
+        which jumper to bridge and how to bridge it, with the easiest method
+        being a short wire soldered to the board. Steps:
+      </p>
+      <ol>
+        <li>Disassemble the machine</li>
+        <li>Find and jump the required contacts</li>
+        <li>Re-assemble the machine</li>
+      </ol>
+      <h3><a name="flashing">Flashing the firmware</a></h3>
+      <p>
+        Now that the hardware write-protect has been disabled, we can move on to
+        flashing the firmware itself. This process is fairly painless and just
+        requires a stable power supply and a bit of time. Run the following
+        commands in VT2 by pressing ctrl+alt+right arrow (ctrl+alt+left arrow to
+        get back) with login chronos:
+      </p>
+      <br />Change directory into Downloads
+
+      <div class="codeblock">cd ~/Downloads</div>
+      Download the script
+      <div class="codeblock">
+        curl -LO https://mrchromebox.tech/firmware-util.sh
+      </div>
+      Run the script as root
+      <div class="codeblock">sudo bash firmware-util.sh</div>
+      Select option 2 (it should be "Install/Update UEFI (Full ROM) Firmware")
+      <br />You should see
+      <div class="out-info">Install/Update UEFI Full ROM Firmware</div>
+      along with the following info message:
+      <div class="out-warn">
+        IMPORTANT: flashing the firmware has the potential to brick your device,
+        <br />requiring relatively inexpensive hardware and some technical
+        knowledge to <br />recover.Not all boards can be tested prior to
+        release, and even then slight <br />differences in hardware can lead to
+        unforseen failures. <br />If you don't have the ability to recover from
+        a bad flash, you're taking a risk.
+        <br />
+        <br />You have been warned.
+      </div>
+      At the prompt, press y to continue.
+      <br />If you see the error
+      <div class="out-error">
+        Hardware write-protect enabled, cannot flash Full ROM firmware.
+      </div>
+      then you failed to disable write protect, refer <a href="#step2">here</a>.
+      <br />It will then warn you that you should install a UEFI-compatible OS:
+      <div class="out-warn">
+        NOTE: After flashing UEFI firmware, you will need to install a
+        UEFI-compatible <br />
+        OS; ChromeOS will no longer be bootable. See
+        https://mrchromebox.tech/#faq
+      </div>
+      press y to continue.
+      <br />If you see the following warning, I advise that you do not continue
+      <div class="out-warn">
+        NOTE: Booting from eMMC on AMD Picasso-based devices does not currently
+        work -- <br />only NVMe, SD and USB. If you have a device with eMMC
+        storage you will not be <br />able to boot from it after installing the
+        UEFI Full ROM firmware."
+      </div>
+      Next, it will ask you to make a backup of your firmware. I would
+      personally do this just to upload it to the Internet Archive, but you
+      don't have to.
+      <div class="out-warn">Create a backup copy of your stock firmware?</div>
+      <div style="display: block; padding: 1%">
+        <br />This is highly recommended in case you wish to return your device
+        to stock <br />configuration/run ChromeOS, or in the (unlikely) event
+        that things go south <br />and you need to recover using an external
+        EEPROM programmer.
+      </div>
+      It will then download the firmware file:
+      <div class="out-warn">Downloading Full ROM firmware</div>
+      After this is finished downloading, it may display a couple irrelivant
+      info messages.
+      <br />It will then disable the sofware write protect. <br /><strong
+        >This shouldn't fail</strong
+      >
+      <div class="out-warn">
+        Disabling software write-protect and clearing the WP range
+      </div>
+      After that it should start installing the firmware.
+      <br /><strong
+        >If the power disconnects while this is happening, your device will be
+        bricked and you will have to use an external programmer to
+        recover</strong
+      >
+      <div class="out-warn">
+        Installing Full ROM firmware (may take up to 90s)
+      </div>
+      After that's finished, congradulations, you have a Corebooted Chromebook!
+      <br /><strong
+        >Don't reboot until you flash a USB drive with the installation medium of
+        your choosing.</strong
+      >
+
+      <h2><a name="linux">Step 2: Installing Linux</a></h2>
+      <p>In case you forgot the basic flashing procedure, here it is:</p>
+      <ol>
+        <li>Download the ISO</li>
+        <li>Verify the checksum</li>
+        <li>
+          Run the following command:
+          <div class="codeblock">
+            sudo dd if=example.iso of=/dev/sd[highest letter] bs=4096
+            status=progress
+          </div>
+        </li>
+        <li>Reboot</li>
+      </ol>
+    </main>
+    <h3 class="terminal-input">$ find -name author</h3>
+    <p>
+      ERROR 404: NULL NOT FOUND <br />Programmer, transfemme, Linux user, FOSS
+      believer
+    </p>
+    <!--Footer-->
+    <h3 class="terminal-input">$ grep "licensing"</h3>
+    <footer>
+      Made by <strong>ERROR-404-NULL-NOT-FOUND</strong> or
+      <strong>Tetra Green</strong> as a personal project. This website is
+      licensed under
+      <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL 3.0 or later</a
+      >.
+    </footer>
+  </body>
+</html>
