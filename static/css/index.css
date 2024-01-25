@@ -102,3 +102,13 @@ li:not(:has(h3)):before {
   font: monospace;
   background-color: darkslategray;
 }
+.date {
+  color: gray;
+  font-size: 0.8em;
+}
+.date::before {
+  content: '['
+}
+.date::after {
+  content: ']'
+}
