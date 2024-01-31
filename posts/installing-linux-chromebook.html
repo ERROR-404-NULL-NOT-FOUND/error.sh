@@ -25,6 +25,25 @@
         A guide on how to install Linux on a Chromebook via Mr. Chromebox
         firmware
       </h3>
+      <div class="date">12/11/24</div>
+      <strong class="out-error">
+        As this guide requires modifying your system's firmware, there is a
+        non-zero chance that you will brick your device,
+        <br />requiring an external programmer to recover. Proceed at your own
+        risk!
+      </strong>
+      <div class="out-warn">
+        The instructions in this article have only been followed on devices with
+        the CR50 <br />firmware locking method; anything else is untested,
+        please report issues following this guide <br />
+        in the issues section of
+        <a href="https://github.com/ERROR-404-NULL-NOT-FOUND/error.sh"
+          >the Github repo</a
+        >
+      </div>
+      <div class="out-info">
+        By following this guide, you will likely void your device's warranty.
+      </div>
     </header>
     <main>
       <h2><a name="why">Why</a></h2>
@@ -43,7 +62,7 @@
         The method used in this guide will be flashing Mr. Chromebox firmware.
         <br />This method has some downsides, such as certain device functions
         not working correctly on some hardware, but I'm going with it because
-        the actual OS installation is much more convienent than
+        the actual OS installation is much more convenient than
         <a href="https://github.com/eupnea-project">Depthboot</a>. <br /><strong
           >This guide assumes that you have already enabled Developer mode and
           have some familarity with UNIX/Linux commands</strong
@@ -90,7 +109,7 @@
         <li>Flash the custom firmware</li>
         <li>Re-assemble the machine</li>
       </ol>
-      <h4><a  name="jumper">CR50 (jumper)</a></h4>
+      <h4><a name="jumper">CR50 (jumper)</a></h4>
       <p>
         This method requires more research and skill, as you need to figure out
         which jumper to bridge and how to bridge it, with the easiest method
@@ -107,7 +126,7 @@
         flashing the firmware itself. This process is fairly painless and just
         requires a stable power supply and a bit of time. Run the following
         commands in VT2 by pressing ctrl+alt+right arrow (ctrl+alt+left arrow to
-        get back) with login chronos:
+        get back) with login <code>chronos</code>:
       </p>
       <br />Change directory into Downloads
 
@@ -127,7 +146,7 @@
         <br />requiring relatively inexpensive hardware and some technical
         knowledge to <br />recover.Not all boards can be tested prior to
         release, and even then slight <br />differences in hardware can lead to
-        unforseen failures. <br />If you don't have the ability to recover from
+        unforeseen failures. <br />If you don't have the ability to recover from
         a bad flash, you're taking a risk.
         <br />
         <br />You have been warned.
@@ -165,9 +184,9 @@
       </div>
       It will then download the firmware file:
       <div class="out-warn">Downloading Full ROM firmware</div>
-      After this is finished downloading, it may display a couple irrelivant
+      After this is finished downloading, it may display a couple irrelevant
       info messages.
-      <br />It will then disable the sofware write protect. <br /><strong
+      <br />It will then disable the software write protect. <br /><strong
         >This shouldn't fail</strong
       >
       <div class="out-warn">
@@ -182,17 +201,17 @@
       <div class="out-warn">
         Installing Full ROM firmware (may take up to 90s)
       </div>
-      After that's finished, congradulations, you have a Corebooted Chromebook!
+      After that's finished, congratulations, you have a Corebooted Chromebook!
       <br /><strong
-        >Don't reboot until you flash a USB drive with the installation medium of
-        your choosing.</strong
+        >Don't reboot until you flash a USB drive with the installation medium
+        of your choosing.</strong
       >
 
       <h2><a name="linux">Step 2: Installing Linux</a></h2>
       <p>In case you forgot the basic flashing procedure, here it is:</p>
       <ol>
         <li>Download the ISO</li>
-        <li>Verify the checksum</li>
+        <li>Verify the checksum (usually using sha256sum)</li>
         <li>
           Run the following command:
           <div class="codeblock">

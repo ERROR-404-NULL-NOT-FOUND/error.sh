@@ -75,10 +75,10 @@ h4 {
 strong {
   color: coral;
 }
-strong:before {
+strong:not(.out-error):before {
   content: "<";
 }
-strong:after {
+strong:not(.out-error):after {
   content: ">";
 }
 h3 > a {
