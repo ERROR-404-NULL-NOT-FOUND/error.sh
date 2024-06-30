@@ -42,21 +42,18 @@ a:visited::before {
   content: "+----------------------------------------------------------------------------------+"
 }*/
 h1 {
-  font-size: 1em;
   color: red;
 }
 h1:before {
   content: "# ";
 }
 h2 {
-  font-size: 1em;
   color: deepskyblue;
 }
 h2:before {
   content: "## ";
 }
 h3 {
-  font-size: 1em;
   color: magenta;
 }
 h3:not(.terminal-input)::before {
@@ -64,11 +61,10 @@ h3:not(.terminal-input)::before {
 }
 
 h4:before {
-  content: "#### "
+  content: "#### ";
 }
 
 h4 {
-  font-size: 1em;
   color: pink;
 }
 
@@ -107,8 +103,39 @@ li:not(:has(h3)):before {
   font-size: 0.8em;
 }
 .date::before {
-  content: '['
+  content: "[";
 }
 .date::after {
-  content: ']'
+  content: "]";
+}
+.failed {
+  font-weight: bold;
+  color: red;
+  display: inline;
+}
+.succeed {
+  font-weight: bold;
+  color: lime;
+  display: inline;
+}
+.pending {
+  font-weight: bold;
+  color: orange;
+  display: inline;
+}
+.failed:before,
+.succeed:before,
+.pending:before {
+  content: "[ ";
+  color: white;
+}
+.failed:after,
+.succeed:after,
+.pending:after {
+  content: " ]";
+  color: white;
+}
+.shenanigan {
+  display: block; 
+  padding-bottom: 5px;
 }
