@@ -136,6 +136,6 @@ li:not(:has(h3)):before {
   color: white;
 }
 .shenanigan {
-  display: block; 
-  padding-bottom: 5px;
+  display: block;
+  padding-bottom: 1em;
 }
