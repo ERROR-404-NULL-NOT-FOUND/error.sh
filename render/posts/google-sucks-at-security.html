@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<!--Website metadata-->
+
+<head>
+<!--Import stylesheet-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../static/css/index.css" />
+<title>ERROR 404: NULL NOT FOUND</title>
+<link rel="icon" type="image/png" href="../static/images/Favicon.png" />
+<meta property="og:title" content="Google sucks at security" />
+<meta property="og:description" content="A lesson on the dangers of legacy code, wide attack surfaces, and singular points of failure" />
+</head>
+
+<body>
+<a href="/index.html">home</a>
+<h3 class="terminal-input">$ cat posts/google-sucks-at-security.html</h3>
+<header>
+<h1>Google sucks at security</h1>
+<h3>A lesson on the dangers of legacy code, wide attack surfaces, and singular points of failure</h3>
+</header>
+<div class="date">11/18/24</div>
+<main><div class="out-warn">
+  I am not a security expert, I'm just a programmer who happened to stumble
+  across Chromebook hacking 6 months ago. Take anything I say with a grain of
+  salt.
+</div>
+<p>
+  In the past 2 years, there have been 7 major unenrollment exploits for
+  Chromebooks, permitting students to essentially remove school ownership of
+  their device and do with it whatever they please. All of these exploits were
+  developed by highschoolers. Google is incompetent at securing their own
+  devices, let's look at why.
+</p>
+<h3>Legacy code</h3>
+<p>
+  If you look through ChromiumOS' codebase you see quite a lot of legacy code
+  that isn't fully understood, is poorly documented, and generally needs a
+  rehaul. This can be seen most easily with the firmware info screens on most
+  Chromebooks released before 2023: when any kind of special boot event occurrs,
+  the device displays a screen that looks like it should've shipped on an early
+  2010s laptop. Which, coincidentally enough, is what it is. Almost all
+  Chromeboxes sold between the release of the original in 2011 up to 2023 had,
+  for all intents and purposes, the same firmware. Near nothing was changed
+  between devices other than the tree required to get the firmware to boot. This
+  dated-ness extended past the graphics; Google had to implement all sorts of
+  weird workarounds to make this firmware do what it was supposed to, which is
+  why they finally replaced it with NewUI in 2023. This attempt at integrating
+  dated software into the newer system led to quite a large and vulnurable
+  attack surface. Why did it take them so long to develop a second firmware
+  revision? Simple, they didn't ever implement an update mechanism in the
+  original, so they had no way to without going out of their way to ship it on
+  new hardware. Also, yes, you heard that right. Until the introduction of the
+  TI50 and the T1 security chip, Google had no way to proactively or reactively
+  update the firmware on Chromebooks. Surely that won't cause problems.
+</p>
+<h3>Poor code quality</h3>
+<p>
+  I know that this isn't in the description, but it's still important
+  nonetheless. Google's code quality on some of the lower-level parts of
+  ChromeOS is, to put it mildly, horseshit. There was a
+  <a href="https://github.com/BinBashBanana/badrecovery">recent exploit</a> that
+  exploited what essentially amounted to a buffer overflow in ChromeOS' recovery
+  utilities, and the most popular exploit of the last 2 years,
+  <a href="https://darkn.bio/sh1mmer">SH1mmer</a>, abused the fact that a
+  specific type of recovery image <i>didn't have rootfs verification</i>, even
+  though it was supposed to.
+</p></main>
+<h3 class="terminal-input">$ find -name author</h3>
+<p>
+ERROR 404: NULL NOT FOUND <br />Programmer, hacker, BSD user, FOSS believer
+</p>
+<!--Footer-->
+<h3 class="terminal-input">$ grep "licensing"</h3>
+<footer>
+Made by <strong>ERROR-404-NULL-NOT-FOUND</strong> or
+<strong>Tetra Green</strong> as a personal project. This website is
+licensed under
+<a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL 3.0 or later</a
+>.
+</footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <!--Import stylesheet-->
+  <link rel="stylesheet" href="css/index.css" />
+  <!--Website metadata-->
+
+  <head>
+    <title>ERROR 404: NULL NOT FOUND</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="static/images/Favicon.png" />
+  </head>
+  <!--Main-->
+
+  <body>
+    <a href="/index.html">home</a>
+    <div id="errorLocation">
+      <noscript>
+        <h3 class="terminal-input">$ cat ./page.html</h3>
+        <span>cat: page.html: no such file or directory</span>
+      </noscript>
+    </div>
+    <script>
+      let shown = document.createElement("h3");
+      let error = document.createElement("span");
+      error.innerText = `cat: .${window.location.pathname}: no such file or directory`;
+      shown.classList.add("terminal-input");
+      shown.innerText = `$ cat .${window.location.pathname}`;
+      document.querySelector("#errorLocation").appendChild(shown);
+      document.querySelector("#errorLocation").appendChild(error);
+    </script>
+  </body>
+</html>
