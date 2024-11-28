@@ -1,0 +1,185 @@
+:root {
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  max-width: 80ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.terminal-input {
+  color: lime;
+}
+.Navigation {
+  border-style: solid;
+  border-color: white;
+  padding: 1em;
+}
+a[href]:before {
+  content: "[";
+}
+a[href]:after {
+  content: "]";
+}
+a[href] {
+  color: cyan;
+  text-decoration: none;
+}
+a:visited::before {
+  content: "[|";
+}
+.profile {
+  display: block;
+  position: relative;
+  border-style: solid;
+  border-color: white;
+  padding: 1em;
+}
+h1 {
+  color: red;
+}
+h1:before {
+  content: "# ";
+}
+h2 {
+  color: deepskyblue;
+}
+h2:before {
+  content: "## ";
+}
+h3 {
+  color: magenta;
+}
+h3:not(.terminal-input)::before {
+  content: "### ";
+}
+
+h4:before {
+  content: "#### ";
+}
+
+h4 {
+  color: pink;
+}
+
+strong {
+  color: coral;
+}
+strong:not(.out-error):before {
+  content: "<";
+}
+strong:not(.out-error):after {
+  content: ">";
+}
+h3 > a {
+  color: magenta;
+}
+ul {
+  list-style-type: none;
+}
+li > h3:before {
+  content: "- " !important;
+}
+li:not(:has(h3)):before {
+  content: "- ";
+}
+
+.codeblock {
+  margin: 4px;
+  padding: 1px;
+  width: fit-content;
+  display: inline;
+  font: monospace;
+  background-color: darkslategray;
+}
+.date {
+  color: gray;
+  font-size: 0.8em;
+}
+.date::before {
+  content: "[";
+}
+.date::after {
+  content: "]";
+}
+.failed {
+  font-weight: bold;
+  color: red;
+  display: inline;
+}
+.succeed {
+  font-weight: bold;
+  color: lime;
+  display: inline;
+}
+.pending {
+  font-weight: bold;
+  color: orange;
+  display: inline;
+}
+.failed:before,
+.succeed:before,
+.pending:before {
+  content: "[ ";
+  color: white;
+}
+.failed:after,
+.succeed:after,
+.pending:after {
+  content: " ]";
+  color: white;
+}
+.shenanigan {
+  display: block;
+  padding-bottom: 1em;
+}
+.out-info {
+  color: limegreen;
+  display: block;
+  padding: 1%;
+}
+.out-warn {
+  color: yellow;
+  display: block;
+  padding: 1%;
+}
+.out-error {
+  color: red;
+  display: block;
+  padding: 1%;
+}
+.miscinfo {
+  display: inline;
+  color: gray;
+}
+.note {
+  border: 2px;
+  border-color: blue;
+  border-style: solid;
+  padding: 4px;
+  margin: 1em;
+}
+.note::before {
+  content: "NOTE: ";
+}
+.warn {
+  border: 2px;
+  border-color: yellow;
+  border-style: solid;
+  padding: 4px;
+  margin: 1em;
+}
+.warn::before {
+  content: "DISCLAIMER: ";
+}
+.quote {
+  border-style: solid;
+  border-color: mediumpurple;
+  padding: 1em;
+  padding-left: 4em;
+}
+.quote::before {
+  font-size:3em;
+  content: '\275D';
+  position: relative;
+  right: 1em;
+}

@@ -1,0 +1,15 @@
+.out-info {
+  color: limegreen;
+  display: block;
+  padding: 1%;
+}
+.out-warn {
+  color: yellow;
+  display: block;
+  padding: 1%;
+}
+.out-error {
+  color: red;
+  display: block;
+  padding: 1%;
+}

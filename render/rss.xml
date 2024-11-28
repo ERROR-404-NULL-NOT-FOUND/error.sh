@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="en-GB">
+<title>ERROR 404: NULL NOT FOUND</title>
+<subtitle>Programmer, hacker, BSD user, FOSS believer</subtitle>
+<link href="https://segfault.us.to/rss.xml" rel="self"/>
+<link href="https://segfault.us.to"/>
+<updated>2024-11-28T18:17:58Z</updated>
+<id>https://segfault.us.to/</id>
+<author>
+<name>Rosa Green</name>
+<email>error404nullnotfound@disroot.org</email>
+</author>
+<entry>
+<title>I love OpenBSD</title>
+<description>My journey with OpenBSD and why I think it's better than Linux</description>
+<link href="https://segfault.us.to/posts/openbsd.html"/>
+<updated>11/27/24</updated>
+<id>https://segfault.us.to/posts/openbsd.html</id>
+</entry><entry>
+<title>I'm using a static site generator now!</title>
+<description>My transition from pure HTML to something a bit more complex</description>
+<link href="https://segfault.us.to/posts/new-site-backend.html"/>
+<updated>11/27/24</updated>
+<id>https://segfault.us.to/posts/new-site-backend.html</id>
+</entry><entry>
+<title>Why every TV is smart now</title>
+<description>How to continue to increase profits after nobody cares about your product</description>
+<link href="https://segfault.us.to/posts/capitalism-and-tech.html"/>
+<updated>11/26/24</updated>
+<id>https://segfault.us.to/posts/capitalism-and-tech.html</id>
+</entry><entry>
+<title>Google sucks at security</title>
+<description>A lesson on the dangers of legacy code, wide attack surfaces, and singular points of failure</description>
+<link href="https://segfault.us.to/posts/google-sucks-at-security.html"/>
+<updated>11/18/24</updated>
+<id>https://segfault.us.to/posts/google-sucks-at-security.html</id>
+</entry><entry>
+<title>The death of the user-driven web</title>
+<description>How the monetization of the web kills user agency and creativity</description>
+<link href="https://segfault.us.to/posts/death-of-user-driven-web.html"/>
+<updated>1/25/24</updated>
+<id>https://segfault.us.to/posts/death-of-user-driven-web.html</id>
+</entry><entry>
+<title>Installing Linux on a Chromebook</title>
+<description>A guide on how to install Linux on a Chromebook via Mr. Chromebox firmware</description>
+<link href="https://segfault.us.to/posts/installing-linux-chromebook.html"/>
+<updated>12/11/23</updated>
+<id>https://segfault.us.to/posts/installing-linux-chromebook.html</id>
+</entry><entry>
+<title>Why you Should try Linux</title>
+<description>Why you should at least try using Linux over Windows or Macos</description>
+<link href="https://segfault.us.to/posts/why-linux-is-good.html"/>
+<updated>?/?/2021</updated>
+<id>https://segfault.us.to/posts/why-linux-is-good.html</id>
+</entry><entry>
+<title>Based people</title>
+<description>A list of people who I think are cool (based)</description>
+<link href="https://segfault.us.to/posts/based-people.html"/>
+<updated>?/?/23</updated>
+<id>https://segfault.us.to/posts/based-people.html</id>
+</entry><entry>
+<title>About Me</title>
+<description>Some info about me</description>
+<link href="https://segfault.us.to/posts/about-me.html"/>
+<updated>?/?/2023</updated>
+<id>https://segfault.us.to/posts/about-me.html</id>
+</entry>
+</feed>

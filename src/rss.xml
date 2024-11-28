@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="en-GB">
+	<title>ERROR 404: NULL NOT FOUND</title>
+	<subtitle>Programmer, hacker, BSD user, FOSS believer</subtitle>
+	<link href="https://segfault.us.to/rss.xml" rel="self"/>
+	<link href="https://segfault.us.to"/>
+	<updated>${TIME}</updated>
+	<id>https://segfault.us.to/</id>
+	<author>
+		<name>Rosa Green</name>
+		<email>error404nullnotfound@disroot.org</email>
+	</author>
+	${POSTS}
+</feed>

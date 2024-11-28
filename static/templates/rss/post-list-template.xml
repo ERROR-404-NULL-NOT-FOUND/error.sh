@@ -1,0 +1,7 @@
+<entry>
+	<title>${TITLE}</title>
+	<description>${DESC}</description>
+	<link href="https://segfault.us.to/${PATH}"/>
+	<updated>${DATE}</updated>
+	<id>https://segfault.us.to/${PATH}</id>
+</entry>
