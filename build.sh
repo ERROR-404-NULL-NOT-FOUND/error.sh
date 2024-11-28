@@ -1,3 +1,6 @@
-./post-builder.sh
+#!/usr/local/bin/bash
+. ./post-builder.sh
+post_builder
 ./index-builder.sh
-cp -r static robots.txt render/
+./rss-builder.sh
+cp -R static robots.txt render/

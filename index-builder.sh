@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 . ./post-builder.sh
 post_list_replace() {
   posts=""
   for i in $1 
   do
-    posts="$posts$(convert_post "posts/$i" post-list-template.html)"
+    posts="$posts$(convert_post "posts/$i" html/post-list-template.html)"
   done
   echo "$posts"
 }

@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/usr/local/bin/bash 
 replace () {
   pattern="${1}"
   replace="${2}"
@@ -11,15 +11,14 @@ replace () {
 
 convert_post () {
   post_text=$(cat "./src/${1}")
-  author=$(cat "./static/author.html")
-  footer=$(cat "./static/footer.html")
-  template=$(cat "./static/${2}")
-  author=$(cat "./static/author.html")
-  footer=$(cat "./static/footer.html")
+  author=$(cat "./static/templates/html/author.html")
+  footer=$(cat "./static/templates/html/footer.html")
+  template=$(cat "./static/templates/${2}")
 
   title=$(echo "${post_text}" | head -1) #assume the title is one line
   desc=$(echo "${post_text}" | head -2 | tail -1) #ditto
   date=$(echo "${post_text}" | head -3 | tail -1) #ditto
+  wc=$(echo "${post_text}"   | wc -w)
   
   path="${1}"
   
@@ -31,6 +30,7 @@ convert_post () {
   template=$(replace '${DESC}'           "${desc}"         "${template}")
   template=$(replace '${DATE}'           "${date}"         "${template}")
   template=$(replace '${PATH}'           "${path}"         "${template}")
+  template=$(replace '${WC}'           	 "${wc}"         "${template}")
 
   if [ $3 ]; then
     #post_text=$(echo "${doc_text}" | sed -e "s/\(https\:\/\/[^ ]*\)/<a href='\1'>\1<\/a>/g")
@@ -41,11 +41,13 @@ convert_post () {
 
   echo "${template}"
 }
+post_builder () {
 rm -rf render
 mkdir -p render/posts
 mkdir -p render/random
 for i in $(find ./src/{posts,random}/ | sed "s/\.\/src\///g" | grep "\.html") #just list the files
 do
   echo "$i"
-  convert_post "$i" "post-template.html" 1 > "render/$i"
+  convert_post "$i" "html/post-template.html" 1 > "render/$i"
 done
+}
