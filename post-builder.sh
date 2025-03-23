@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash 
+#!/bin/env bash
 replace () {
   pattern="${1}"
   replace="${2}"
@@ -7,6 +7,44 @@ replace () {
   do
     echo "${line//${pattern}/${replace}}"
   done  
+}
+
+select_content () {
+  local pattern_start="${1}"
+  local pattern_end="${2}"
+  local buff_add=0
+  echo "${3}" | \
+    while read -r line
+  do
+    if [ ${buff_add} -eq 1 ] && [ "${line}" != "${pattern_end}" ]; then
+      echo "${line}"
+    fi
+    if [ "${line}" == "${1}" ]; then
+      buff_add=1
+    elif [ "${line}" == "${2}" ]; then 
+      buff_add=0
+    fi
+  done
+}
+
+replace_content () {
+  local pattern_start="${1}"
+  local pattern_end="${2}"
+  local replacement="${4}"
+  local buff_add=0
+  echo "${3}" | \
+    while read -r line
+  do
+    if [ "${line}" == "${1}" ]; then
+      buff_add=1
+    elif [ "${line}" == "${2}" ]; then 
+      buff_add=0
+      echo "${replacement}"
+    fi
+    if [ ${buff_add} -eq 0 ] && [ "${line}" != "${pattern_end}" ]; then
+      echo "${line}"
+    fi
+  done
 }
 
 convert_post () {
@@ -38,10 +76,39 @@ convert_post () {
   
     template=$(replace '${CONTENT}'        "${post_text}"    "${template}")
   fi
-
+  template=$(render_post "${template}")
   echo "${template}"
 }
-post_builder () {
+print_top () {
+  for i in $(seq 1 81); do
+    echo -n "-"
+  done
+  echo
+}
+make_box () {
+  text="${1}"
+  class="${2}"
+  echo "<pre class=textbox><span class="${class}">$(print_top)</span>"
+  echo "$(echo $class | tr '[:lower:]' '[:upper:]'):
+${text}" | \
+    while read -r line; do
+    echo -n "<span class=${class}>|</span><span>${line}"
+    for i in $(seq 1 $((80-$(echo "${line}" | wc -m)))); do
+      echo -n " "
+    done
+    echo "</span><span class=${class}>|</span>"
+  done
+  echo "<span class="${class}">$(print_top)</span></pre>"
+}
+render_post () {
+  post_text="$(echo "${1}" | fold -w 80 -s)"
+  warning="$(select_content "[WARN]" "[/WARN]" "${post_text}")"
+  info="$(select_content "[NOTE]" "[/NOTE]" "${post_text}")"
+  post_text="$(replace_content "[WARN]" "[/WARN]" "${post_text}" "$(make_box "${warning}" warn)")"
+  post_text="$(replace_content "[NOTE]" "[/NOTE]" "${post_text}" "$(make_box "${info}" info)")"
+  echo "${post_text}"
+}
+
 rm -rf render
 mkdir -p render/posts
 mkdir -p render/random
@@ -49,5 +116,5 @@ for i in $(find ./src/{posts,random}/ | sed "s/\.\/src\///g" | grep "\.html") #j
 do
   echo "$i"
   convert_post "$i" "html/post-template.html" 1 > "render/$i"
+  #render_post "$(cat ./src/$i)"
 done
-}

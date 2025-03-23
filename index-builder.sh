@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/bin/env bash
 . ./post-builder.sh
 post_list_replace() {
   posts=""

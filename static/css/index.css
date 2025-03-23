@@ -162,14 +162,7 @@ li:not(:has(h3)):before {
   content: "NOTE: ";
 }
 .warn {
-  border: 2px;
-  border-color: yellow;
-  border-style: solid;
-  padding: 4px;
-  margin: 1em;
-}
-.warn::before {
-  content: "DISCLAIMER: ";
+  color: yellow;
 }
 .quote {
   border-style: solid;
@@ -182,4 +175,7 @@ li:not(:has(h3)):before {
   content: '\275D';
   position: relative;
   right: 1em;
+}
+main {
+  white-space: pre;
 }
