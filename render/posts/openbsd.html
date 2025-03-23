@@ -21,26 +21,23 @@ think it's better than Linux" />
 <h1>I love OpenBSD</h1>
 <h3>My journey with OpenBSD and why I think it's better than Linux</h3>
 </header>
-<div class="date">11/27/24 - 787 words</div>
-<main><p>Some of you who have read this blog for a while may remember all the
-way back in my <a href="why-linux-is-good.html">first actual post</a> when I
-talked about why I like Linux. As should be obvious from the title of this
-post, I no longer hold that opinion. Now, don't get me wrong, Linux is still
-leagues better than the likes of Windows and MacOS, but it has one glaring
-issue: <strong>it's not a coherent OS</strong>.
-<h3>Coherency</h3>
-<div class="quote">I'd just like to interject for a moment. What you're
-refering to as Linux, is in fact, GNU/Linux, or as I've recently taken to
-calling it, GNU plus Linux. Linux is not an operating system unto itself, but
-rather another free component of a fully functioning GNU system made useful by
-the GNU corelibs, shell utilities and vital system components comprising a full
-OS as defined by POSIX.
-
+<div class="date">11/27/24 - 844 words</div>
+<main>Some of you who have read this blog for a while may remember all the way
+back in my first actual post[1] when I talked about why I like Linux. As should
+be obvious from the title of this post, I no longer hold that opinion. Now,
+don't get me wrong, Linux is still leagues better than the likes of Windows and
+MacOS, but it has one glaring issue: it's not a coherent OS.
+# Coherency
+[QUOTE]
+I'd just like to interject for a moment. What you're refering to as Linux, is
+in fact, GNU/Linux, or as I've recently taken to calling it, GNU plus Linux.
+Linux is not an operating system unto itself, but rather another free component
+of a fully functioning GNU system made useful by the GNU corelibs, shell
+utilities and vital system components comprising a full OS as defined by POSIX.
 Many computer users run a modified version of the GNU system every day, without
 realizing it. Through a peculiar turn of events, the version of GNU which is
 widely used today is often called Linux, and many of its users are not aware
 that it is basically the GNU system, developed by the GNU Project.
-
 There really is a Linux, and these people are using it, but it is just a part
 of the system they use. Linux is the kernel: the program in the system that
 allocates the machine's resources to the other programs that you run. The
@@ -49,9 +46,10 @@ can only function in the context of a complete operating system. Linux is
 normally used in combination with the GNU operating system: the whole system is
 basically GNU with Linux added, or GNU/Linux. All the so-called Linux
 distributions are really distributions of GNU/Linux.<br>
-</div>
-<small>I'm sorry, but I had to</small>
-<br>This copypasta, while being quite annoying, is indeed accurate. There is no
+[/QUOTE]
+-I'm sorry, but I had to-
+
+This copypasta, while being quite annoying, is indeed accurate. There is no
 such thing as one single Linux operating system. All of the distributions bodge
 together mostly unrelated software in order to create a semblance of a coherent
 system, but do not be fooled. This system is not coherent. The documentation
@@ -61,37 +59,44 @@ like what they are: hacked-together abominations. BSDs don't have this issue.
 The entirety of the system works together seemlessly, and you can do most of
 what you want with the defualt install (OpenBSD, for example, ships utilities
 that permit it to act as a DNS server, router, firewall, mail server, and web
-server). Also, everything <i>just works</i>. Audio? <span
-class="codeblock">sndioctl</span>. Hardware accel? <span
-class="codeblock">fw_update</span> should do the trick. The system ships
-<i>sane defaults</i> without doing too much. You're still given the freedom to
+server). Also, everything /just works/. Audio? sndioctl. Hardware accel?
+fw_update should do the trick. The system ships /sane defaults/ that makes
+things work properly without doing too much. You're still given the freedom to
 choose the WM or DE to use, but the ones OpenBSD ships by default (namely CWM)
 are perfectly adequite for my usage.
-<h3>Documentation</h3>
+
+# Documentation
 All that's well and good, but what's the use of a system if you don't know how
 to use it? OpenBSD's manpages do an excellent job at that. Unline GNU manpages
 which seem to only be designed to give people a refresher on how to use
-something (see the infamous <a href="https://linux.die.net/man/8/ip">ip</a>
-manpage for an example), BSD manpages are compreshensive and convey all of the
-information you need to know about that program, syscall, or idea. Take CWM for
-example. Its <a href="https://man.openbsd.org/cwmrc.5">config file manpage</a>
+something (see the infamous ip[1] manpage for an example), BSD manpages are
+compreshensive and convey all of the information you need to know about that
+program, syscall, or idea. Take CWM for example. Its config file manpage[2]
 clearly explains how to do everything that you could possibly want to do with
 the program, as well as providing examples. This kind of documentation is neigh
 unheard of in the Linux ecosystem.
-<h3>Code quality and simplicity</h3>
+# Code quality and simplicity
 The entire OpenBSD base system is comprised of roughly 3 million source lines
 of code. The Linux kernel on its own is 30 million. "But wouldn't more lines of
-code mean more features and thus better?" you may ask. The answer is
-<strong>no</strong>. The more lines of code you have, the more difficult your
-program is to audit. The more difficult your program is to audit, the more
-likely bugs will slip through. Complexity is not what you want in a
-maintainable computer system. Windows and MacOS can get away with it because
-they have billions of dollars at their disposal. Lines of code aside, GNU (the
-most common coreutils and standard lib for Linux systems) just writes terrible
-code. Reading through, it's full of more comments than code, because most of
-the code itself is incomprehensible spaghetti. OpenBSD, on the other hand, is
-mostly readable for someone who has even a base knowledge of C.
-<h3>OpenBSD isn't for everyone</h3></main>
+code mean more features and thus better?" you may ask. The answer is *no*. The
+more lines of code you have, the more difficult your program is to audit. The
+more difficult your program is to audit, the more likely bugs will slip
+through. Complexity is not what you want in a maintainable computer system.
+Windows and MacOS can get away with it because they have billions of dollars at
+their disposal. Lines of code aside, GNU (the most common coreutils and
+standard lib for Linux systems) just writes terrible code. Reading through,
+it's full of more comments than code, because most of the code itself is
+incomprehensible spaghetti. OpenBSD, on the other hand, is mostly readable for
+someone who has even a base knowledge of C.
+
+# OpenBSD isn't for everyone
+If all you want is a computer to act "normally," OpenBSD isn't for you. It's an
+operating system by hackers, for hackers, and it just so happens to be
+productive as a side effect. Most of your programs won't work on OpenBSD; the
+virtualization is worse than 9front[3]'s, somehow
+
+[1] https://linux.die.net/man/8/ip
+[2] https://man.openbsd.org/cwmrc.5</main>
 <h3 class="terminal-input">$ find -name author</h3>
 <p>
 ERROR 404: NULL NOT FOUND <br />Programmer, hacker, BSD user, FOSS believer
